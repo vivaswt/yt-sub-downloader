@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube English Auto-Sub → SRV2",
+  "version": "0.1.0",
+  "description": "Detect English auto-generated captions on the current YouTube video and save them as SRV2 XML.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "action": {
+    "default_title": "Get YouTube English Auto-Sub",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ]
+}

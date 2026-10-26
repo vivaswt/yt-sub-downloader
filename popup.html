@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube SRV2</title>
+  <style>
+    body {
+      width: 340px;
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    #title { font-weight: 600; margin-bottom: 8px; line-height: 1.35; }
+    #status { margin: 8px 0 12px; white-space: pre-wrap; line-height: 1.4; }
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 6px;
+      padding: 9px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button:disabled { cursor: default; opacity: 0.45; }
+    #hint { margin-top: 10px; color: #666; font-size: 12px; line-height: 1.4; }
+    .ok { color: #176b2c; }
+    .warn { color: #8a5a00; }
+    .error { color: #9c1d1d; }
+  </style>
+</head>
+<body>
+  <h1>YouTube English Auto-Sub → SRV2</h1>
+  <div id="title">Checking…</div>
+  <div id="status">Waiting for YouTube's caption request…</div>
+  <button id="save" disabled>Save .srv2</button>
+  <div id="hint">
+    Start/play the English auto-generated captions once. The extension captures the timedtext request and keeps the SRV2 payload in this tab.
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
